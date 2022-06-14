@@ -11,19 +11,18 @@ spec:
         app: flask-frontend
     spec:
       containers:
-        - name: flask-frontend
-          image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/flask:latest
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 5000
-          env:
-            - name: BACKEND_URL
-              value: http://flask-backend.flask-backend:5000/messages
-            - name: AWS_DEFAULT_REGION
-              value: ap-northeast-1
-            - name: DYNAMODB_TABLE_NAME
-              value: messages
-
+      - name: flask-frontend
+        image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/flask:2022-06-14H12.53.35-c961b79
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        env:
+        - name: BACKEND_URL
+          value: http://flask-backend.flask-backend:5000/messages
+        - name: AWS_DEFAULT_REGION
+          value: ap-northeast-1
+        - name: DYNAMODB_TABLE_NAME
+          value: messages
   selector:
     matchLabels:
       app: flask-frontend
