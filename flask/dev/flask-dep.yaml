@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-app
-  namespace: flask-app
+  name: flask-frontend
+  namespace: flask-frontend
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: flask-app
+        app: flask-frontend
     spec:
       containers:
-        - name: flask-app
+        - name: flask-frontend
           image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/flask:latest
           imagePullPolicy: Always
           ports:
@@ -26,4 +26,4 @@ spec:
 
   selector:
     matchLabels:
-      app: flask-app
+      app: flask-frontend
