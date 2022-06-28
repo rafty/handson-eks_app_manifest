@@ -26,7 +26,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-1:338456725408:certificate/124163b3-7ec8-4cf7-af6e-f05d8bc6ce8f
-    external-dns.alpha.kubernetes.io/hostname: flask.yamazon.tk  # Route53 HostedZoneにendpointを登録
+    external-dns.alpha.kubernetes.io/hostname: flask-dev.yamazon.tk  # Route53 HostedZoneにendpointを登録
 spec:
   rules:
     - http:
