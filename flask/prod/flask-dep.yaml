@@ -22,7 +22,6 @@ spec:
               value: ap-northeast-1
             - name: DYNAMODB_TABLE_NAME
               value: messages-prd
-
   selector:
     matchLabels:
       app: flask-app
