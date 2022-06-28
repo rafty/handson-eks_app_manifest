@@ -1,30 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-frontend
-  namespace: flask-frontend
+  name: flask-app
+  namespace: flask-app
 spec:
-#  replicas: 1
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
-        app: flask-frontend
+        app: flask-app
     spec:
+      serviceAccountName: flask-app
       containers:
-        - name: flask-frontend
-          image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/flask:latest
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 5000
-          env:
-#            - name: BACKEND_URL
-#              value: http://flask-backend.flask-backend:5000/messages
-            - name: AWS_DEFAULT_REGION
-              value: ap-northeast-1
-            - name: DYNAMODB_TABLE_NAME
-              value: messages
-
+      - name: flask-app
+        image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/flask:2022-06-17H09.02.50-975ae3d
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        env:
+        - name: AWS_DEFAULT_REGION
+          value: ap-northeast-1
+        - name: DYNAMODB_TABLE_NAME
+          value: messages-dev
   selector:
     matchLabels:
-      app: flask-frontend
+      app: flask-app
