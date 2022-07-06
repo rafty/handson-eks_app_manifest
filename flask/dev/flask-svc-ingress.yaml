@@ -6,7 +6,8 @@ metadata:
 spec:
   selector:
     app: flask-app
-  type: ClusterIP  # NodePortから変更
+  #type: ClusterIP  # NodePortから変更
+  clusterIP: None
   ports:
     - protocol: TCP
       port: 80
