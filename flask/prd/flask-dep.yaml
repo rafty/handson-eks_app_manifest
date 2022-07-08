@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-app
-  namespace: flask-app
+  name: flask
+  namespace: flask
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: flask-app
+        app: flask
     spec:
-      serviceAccountName: flask-app
+      serviceAccountName: flask
       containers:
-      - name: flask-app
+      - name: flask
         image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/flask:2022-07-08H19.43.59-975ae3d
         imagePullPolicy: Always
         ports:
@@ -24,4 +24,4 @@ spec:
           value: messages-prd
   selector:
     matchLabels:
-      app: flask-app
+      app: flask
