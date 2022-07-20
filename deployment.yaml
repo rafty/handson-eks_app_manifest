@@ -13,7 +13,7 @@ spec:
       serviceAccountName: flask
       containers:
       - name: flask
-        image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/flask:2022-07-19H15.03.05-34e1d2b
+        image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/flask:2022-07-20H08.27.37-34e1d2b
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
